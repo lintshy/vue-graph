@@ -18,12 +18,17 @@ const inventoryResolvers = {
 
                 return existingUser.id === userId
             })
+            console.log(matchingUserIdx)
             if (matchingUserIdx < 0) {
                 return null
             }
             console.log(selectedInventoryItemIdx, matchingUserIdx)
             if (selectedInventoryItemIdx !== -1) {
-                users[matchingUserIdx].inventory?.push({ inventoryId: inventory[selectedInventoryItemIdx]?.id, purchaseDate: new Date().toISOString() })
+                users[matchingUserIdx].inventory?.push({
+                    ...inventory[selectedInventoryItemIdx],
+                    inventoryId: inventory[selectedInventoryItemIdx].id,
+                    purchaseDate: new Date().toISOString()
+                })
                 inventory[selectedInventoryItemIdx].status = 'Purchased'
                 return 'success'
             }

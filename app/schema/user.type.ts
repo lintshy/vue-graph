@@ -1,3 +1,4 @@
+import { InventoryItem } from "./inventory.type"
 
 
 export type User = {
@@ -11,7 +12,7 @@ export type User = {
 
 }
 
-export type UserInventory = {
+export type UserInventory = InventoryItem & {
     inventoryId: string
     purchaseDate: string
 }

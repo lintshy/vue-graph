@@ -12,6 +12,11 @@ export const Schema = gql`
   type UserInventory  {
     inventoryId: String
     purchaseDate: String
+    name: String
+    category: String
+    description: String
+    imageUrl: String
+    status: String
   }
   type InventoryItem {
     id: String

@@ -1,6 +1,4 @@
-import { InventoryItem } from "../schema";
-
-export const inventory: InventoryItem[] = [
+[
     {
         "id": "6N80",
         "name": "Table Cloth 62x120 White",
